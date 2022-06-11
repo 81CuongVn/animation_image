@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Image</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Kích thước màn hình 1280 x 720 -->
+    <div class="container">
+
+    </div>
+    <script>
+        const container = document.querySelector('.container')
+        for (let i = 0; i < 300; i++) {
+            let box = document.createElement('div')
+            box.classList.add('box')
+            container.appendChild(box)
+        }
+        let boxes = document.querySelectorAll('.box')
+        let count = 0;
+        let interval = setInterval(() => {
+            boxes[count].classList.add('show')
+            count++
+            if (count == boxes.length) {
+                clearInterval(interval)
+            }
+        }, 100)
+    </script>
+
+</body>
+
+</html>
